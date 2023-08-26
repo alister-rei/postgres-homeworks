@@ -2,13 +2,16 @@
 import csv
 import os
 import psycopg2
+from dotenv import load_dotenv
+
 
 
 # Параметры для подключения к базе данных
-USER = "alister"
-PASSWORD = "1234"
-HOST = "localhost"
-DB = "north"
+load_dotenv()
+USER = os.getenv('USER_SQL')
+PASSWORD = os.getenv('PASSWORD_SQL')
+HOST = os.getenv('HOST')
+DB = os.getenv('DB')
 
 # Путь к файлам с данными
 PATH_CUSTOMERS = os.path.join(os.path.dirname(__file__), "north_data", "customers_data.csv")
